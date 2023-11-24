@@ -32,4 +32,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: amnasalahudin/${{ github.repository }}:${{ github.run_number }}-${{ steps.timestamp.outputs.timestamp }}
+        tags: amnasalahudin/python-auth-example:latest
