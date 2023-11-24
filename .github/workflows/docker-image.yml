@@ -32,4 +32,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.repository }}:${{ github.run_number }}-${{ steps.timestamp.outputs.timestamp }}
+        tags: amnasalahudin/${{ github.repository }}:${{ github.run_number }}-${{ steps.timestamp.outputs.timestamp }}
