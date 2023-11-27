@@ -25,7 +25,8 @@ jobs:
     - name: Construct Docker Tag
       id: docker_tag
       run: |
-        REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+        # Extract just the repository name (excluding the GitHub username)
+        REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
         TIMESTAMP=$(date +%s)
         DOCKER_TAG="${{ secrets.DOCKERHUB_USERNAME }}/${REPO_NAME}:${{ github.run_number }}-$TIMESTAMP"
         echo "Constructed Docker Tag: $DOCKER_TAG"
